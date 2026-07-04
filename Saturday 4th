@@ -1,0 +1,57 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOrUsxh7H7wxBNQw93C2ylO",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shanvigupta262011-collab/my-colab-code/blob/main/Saturday%204th\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# program 1: interactive user input\n",
+        "user_name = input('enter your name:')\n",
+        "\n",
+        "print(f'welcome back, {user_name}!your 1230-day timeline to MIT is active')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rI0lo5h3X3sH",
+        "outputId": "8760c7be-32f0-4408-9906-053da30fa383"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "enter your name:Shanvi gupta\n",
+            "welcome back, Shanvi gupta!your 1230-day timeline to MIT is active\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
