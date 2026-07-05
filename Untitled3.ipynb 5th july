@@ -1,0 +1,79 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMD6KARyq1JacDZ8PB4tQZR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shanvigupta262011-collab/my-colab-code/blob/main/Untitled3.ipynb%205th%20july\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "nCSsp18-Kwwu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Qs1PvaHRKXSy",
+        "outputId": "1cde89ab-61a0-472d-8fe1-448290366149"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- AI autonomous vehicle vector calculator ---\n",
+            "enter initial velocity (in m/s): 78\n",
+            "enter time taken (in seconds): 10\n",
+            " DATA VALIDATED: Calculating path tracking vector...\n",
+            " the toatal displacement of the vehicle is: 780.0 meters.\n"
+          ]
+        }
+      ],
+      "source": [
+        "print('--- AI autonomous vehicle vector calculator ---')\n",
+        "\n",
+        "# taking velocity and time inputs from the user\n",
+        "velocity = float(input('enter initial velocity (in m/s): '))\n",
+        "time = float(input('enter time taken (in seconds): '))\n",
+        "\n",
+        "# the AI architctural validation check\n",
+        "if time < 0:\n",
+        "   print(' ERROR: negative time is physically impossible. calculation aborted.')\n",
+        "elif time == 0:\n",
+        "   print('WARNING: time is zero . vehicle is stationary. displacement is 0 meters.')\n",
+        "else:\n",
+        "    # if the data passes validation, calculate displacement (velocity * time)\n",
+        "    displacement = velocity * time\n",
+        "    print(f' DATA VALIDATED: Calculating path tracking vector...')\n",
+        "    print(f' the toatal displacement of the vehicle is: {displacement} meters.')"
+      ]
+    }
+  ]
+}
