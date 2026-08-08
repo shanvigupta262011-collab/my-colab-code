@@ -1,0 +1,81 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPhC7El56qWtSnlQUONEMqR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shanvigupta262011-collab/my-colab-code/blob/main/Untitled4.ipynb%20LOOPS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j_EtzRCRYrzZ",
+        "outputId": "8d2eb15c-6c60-404d-c333-526173cf21d3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- AI drone proximity radar system ---\n",
+            "sensor scan: enter distance to obstacle (in meters): 56\n",
+            " PATH CLEAR: Distance is 56.0m. continuing autonomous flight ...\n",
+            "\n",
+            "sensor scan: enter distance to obstacle (in meters): 10\n",
+            " PATH CLEAR: Distance is 10.0m. continuing autonomous flight ...\n",
+            "\n",
+            "sensor scan: enter distance to obstacle (in meters): 5\n",
+            " PATH CLEAR: Distance is 5.0m. continuing autonomous flight ...\n",
+            "\n",
+            "sensor scan: enter distance to obstacle (in meters): 2\n",
+            " EMERGENCY BRAKE ENGAGED! obstacle too close. system halting.\n"
+          ]
+        }
+      ],
+      "source": [
+        "print('--- AI drone proximity radar system ---')\n",
+        "\n",
+        "# start a loop that runs continuously\n",
+        "while True:\n",
+        "  # simulating a sensor reading distance to the next object\n",
+        "  distance = float(input('sensor scan: enter distance to obstacle (in meters): '))\n",
+        "\n",
+        "  # The ai decision loop\n",
+        "  if distance <= 0:\n",
+        "     print(' CRITICAL ERROR: sensor reading invalid. manual override required!')\n",
+        "     break # this exits the loop completely\n",
+        "\n",
+        "  elif distance < 5:\n",
+        "      print(' EMERGENCY BRAKE ENGAGED! obstacle too close. system halting.')\n",
+        "      break # this breaks the loop to protect the vehicle\n",
+        "\n",
+        "  else:\n",
+        "      print(f' PATH CLEAR: Distance is {distance}m. continuing autonomous flight ...\\n')"
+      ]
+    }
+  ]
+}
