@@ -1,0 +1,100 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNbFQDDhe0/qpQlSwFxLdpZ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shanvigupta262011-collab/my-colab-code/blob/main/Untitled5.ipynb%2015%20august\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5ZblzZTMijIm",
+        "outputId": "56258501-a602-4676-dad3-f33f852e50c0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- AI real-time motion analytics control ---\n",
+            "current status: 0.0m traveled in 0.0s.\n",
+            "enter displacement for the last 1 second (or 0 to stop): 40\n",
+            "current status: 40.0m traveled in 1.0s.\n",
+            "enter displacement for the last 1 second (or 0 to stop): 57\n",
+            "current status: 97.0m traveled in 2.0s.\n",
+            "enter displacement for the last 1 second (or 0 to stop): 78\n",
+            "current status: 175.0m traveled in 3.0s.\n",
+            "enter displacement for the last 1 second (or 0 to stop): 0\n",
+            " /n journey complete. finalizing data analytics stream...\n",
+            " ANALYSIS COMPLETE: total displacemet = 175.0m | average velocity = 58.333333333333336 m/s\n"
+          ]
+        }
+      ],
+      "source": [
+        "print('--- AI real-time motion analytics control ---')\n",
+        "\n",
+        "total_displacement = 0.0\n",
+        "total_time = 0.0\n",
+        "\n",
+        "while True:\n",
+        "  print(f'current status: {total_displacement}m traveled in {total_time}s.')\n",
+        "\n",
+        "  # input displacement for the last 1-second interval\n",
+        "  step_displacement = float(input('enter displacement for the last 1 second (or 0 to stop): '))\n",
+        "\n",
+        "  # check if the vehicle has come to a final stop\n",
+        "  if step_displacement == 0:\n",
+        "    print(' /n journey complete. finalizing data analytics stream...')\n",
+        "    break\n",
+        "\n",
+        "  # validation: displacement cannot be negative if moving in a single tracking vector\n",
+        "  if step_displacement < 0:\n",
+        "    print('WARNING: negative displacement interval detected. skipping data packet. /n')\n",
+        "    continue # this skips the rest of the loop and starts the next iteration\n",
+        "\n",
+        "  # update our systems totals\n",
+        "  total_displacement = total_displacement + step_displacement\n",
+        "  total_time = total_time + 1.0\n",
+        "\n",
+        "# post loop final calculation\n",
+        "if total_time > 0:\n",
+        "  average_velocity = total_displacement / total_time\n",
+        "  print(f' ANALYSIS COMPLETE: total displacemet = {total_displacement}m | average velocity = {average_velocity} m/s')\n",
+        "else:\n",
+        "  print(' SYSTEM INFO: no motion log data recorded.')\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "vNLVTBRUpDPW"
+      }
+    }
+  ]
+}
